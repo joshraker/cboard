@@ -1550,6 +1550,7 @@ export class BoardContainer extends Component {
           board={this.state.translatedBoard}
           intl={this.props.intl}
           scannerSettings={this.props.scannerSettings}
+          dwellSettings={this.props.dwellSettings}
           deactivateScanner={this.props.deactivateScanner}
           disableBackButton={disableBackButton}
           userData={this.props.userData}

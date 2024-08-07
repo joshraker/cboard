@@ -85,6 +85,7 @@ export class Board extends Component {
     displaySettings: PropTypes.object,
     navigationSettings: PropTypes.object,
     scannerSettings: PropTypes.object,
+    dwellSettings: PropTypes.object,
     userData: PropTypes.object,
     deactivateScanner: PropTypes.func,
     navHistory: PropTypes.arrayOf(PropTypes.string),
@@ -113,6 +114,7 @@ export class Board extends Component {
     },
     navigationSettings: {},
     scannerSettings: { active: false, delay: 2000, strategy: 'automatic' },
+    dwellSettings: { active: true, delay: 2000, clearDelay: 500 },
     selectedTileIds: [],
     emptyVoiceAlert: false,
     userData: {}
