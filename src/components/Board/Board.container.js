@@ -852,7 +852,8 @@ export class BoardContainer extends Component {
       boards,
       showNotification,
       navigationSettings,
-      isLiveMode
+      isLiveMode,
+      displaySettings: { hideOutputActive }
     } = this.props;
     const hasAction = tile.action && tile.action.startsWith('+');
 
@@ -887,6 +888,13 @@ export class BoardContainer extends Component {
       if (!navigationSettings.quietBuilderMode) {
         say();
       }
+
+      if (hideOutputActive) {
+        // If the output is hidden, there's no way to clear the output and the
+        // application will eventually run out of memory so do not changeOutput
+        return;
+      }
+
       if (isLiveMode) {
         const liveTile = {
           backgroundColor: 'rgb(255, 241, 118)',
